@@ -34,11 +34,11 @@ document.getElementById('theme-toggle')?.addEventListener('click', () => {
     if (newTheme === 'dark') {
         if (themeIcon) themeIcon.src = './assets/sun.svg';
         if (themeIconMobile) themeIconMobile.src = './assets/sun.svg';
-        if (logo) logo.src = '/assets/logo-light.png'; // لوجو الوضع الليلي
+        if (logo) logo.src = './assets/logo-light.png'; // لوجو الوضع الليلي
     } else {
         if (themeIcon) themeIcon.src = './assets/moon.svg';
         if (themeIconMobile) themeIconMobile.src = './assets/moon.svg';
-        if (logo) logo.src = '/assets/logo-dark.png'; // لوجو الوضع النهاري
+        if (logo) logo.src = './assets/logo-dark.png'; // لوجو الوضع النهاري
     }
 });
 
@@ -56,11 +56,11 @@ document.getElementById('theme-toggle-mobile')?.addEventListener('click', () => 
     if (newTheme === 'dark') {
         if (themeIcon) themeIcon.src = './assets/sun.svg';
         if (themeIconMobile) themeIconMobile.src = './assets/sun.svg';
-        if (logo) logo.src = '/assets/logo-light.png'; // لوجو الوضع الليلي
+        if (logo) logo.src = './assets/logo-light.png'; // لوجو الوضع الليلي
     } else {
         if (themeIcon) themeIcon.src = './assets/moon.svg';
         if (themeIconMobile) themeIconMobile.src = './assets/moon.svg';
-        if (logo) logo.src = '/assets/logo-dark.png'; // لوجو الوضع النهاري
+        if (logo) logo.src = './assets/logo-dark.png'; // لوجو الوضع النهاري
     }
 });
 
