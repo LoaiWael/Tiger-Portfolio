@@ -7,9 +7,11 @@ function toggleMenu() {
 
 // Theme handling
 document.addEventListener('DOMContentLoaded', () => {
+    setFaviconByTheme();
+
     // Set dark mode as default
     document.documentElement.setAttribute('data-theme', 'dark');
-    
+
     // Update theme toggle button icons
     const themeIcon = document.getElementById('theme-icon');
     const themeIconMobile = document.getElementById('theme-icon-mobile');
@@ -45,7 +47,7 @@ document.getElementById('theme-toggle-mobile')?.addEventListener('click', () => 
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
-    
+
     // Update theme toggle button icons
     const themeIcon = document.getElementById('theme-icon');
     const themeIconMobile = document.getElementById('theme-icon-mobile');
@@ -56,11 +58,20 @@ document.getElementById('theme-toggle-mobile')?.addEventListener('click', () => 
         if (themeIconMobile) themeIconMobile.src = './assets/sun.svg';
         if (logo) logo.src = '/assets/logo-light.png'; // لوجو الوضع الليلي
     } else {
-      if (themeIcon) themeIcon.src = './assets/moon.svg';
+        if (themeIcon) themeIcon.src = './assets/moon.svg';
         if (themeIconMobile) themeIconMobile.src = './assets/moon.svg';
         if (logo) logo.src = '/assets/logo-dark.png'; // لوجو الوضع النهاري
     }
 });
 
+//أخويا النمر الي بيراجع ورايا
+function setFaviconByTheme() {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const favicon = document.querySelector('link[rel="icon"]');
 
-
+    if (isDarkMode) {
+        favicon.href = './assets/logo-light.png';
+    } else {
+        favicon.href = './assets/logo-dark.png';
+    }
+}
